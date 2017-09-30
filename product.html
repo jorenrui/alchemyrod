@@ -495,15 +495,19 @@
 			<td width="25%" bgcolor="#000712">
 			<!-- Submit input -->
 			<td width="75%" bgcolor="#000E25" align="center">
-				<input type="button" onclick="myFunction()" value="Send order">
-				<br><br>
 			</td>
 			<!-- END Submit input -->
 		</tr>
 
 	</table>
 	<!-- END Content Section -->
-
+	<div align="center">
+		<a onclick="myFunction()">
+			<br><br>
+			<br><br>
+			<img src="assets/img/btn-order-now.jpg" height="60" width="150"/>
+		</a>
+	</div>
 	</div>
 	
 	<br><br><br><br><br>
@@ -545,67 +549,57 @@
 
 		//Computation of Quantity
 	    var txt = prompt("Enter your name:","");
-	    var innerHTMLvalue = "<label for='name'>Name</label>:&emsp;&emsp;&emsp;&emsp;&emsp;"+txt+"<br><br>Item Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Price&emsp;&emsp;&emsp;&emsp;Quantity&emsp;&emsp;Total Price<br>";
-	    txt += "\n";
+	    var innerHTMLvalue = "<table height='auto' width='100%' cellpadding='5' cellspacing='5'><thead><tr bgcolor='#252525'><th width='10%'></th><th>Item List</th><th>Quantity</th><th>Unit Price</th><th>Total Price</th><th width='10%'></th></tr></thead><tbody>";
 
 	    if (cbTekken.checked) {
 	    	quantity = prompt("You have chose " +  cbTekken.value +": $53.12, please enter quantity", "");
 	    	totalPrice += quantity * 53.12;
-	    	txt += cbTekken.value +": $53.12\n";
-	    	innerHTMLvalue += cbTekken.value + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  : $53.12&emsp;&emsp;&emsp;" + quantity + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 53.12).toFixed(2) +"<br>";
+	    	innerHTMLvalue += "<tr><td></td><td>" + cbTekken.value + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$53.12</td><td>&emsp;&emsp;&emsp;" + quantity + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 53.12).toFixed(2) +"</td><td></td></tr>";
 
 	    }
 	    if (cbElder.checked) {
-	    	quantity += prompt("You have chose " +  cbElder.value +":$45.35, please enter quantity", "");
+	    	quantity = prompt("You have chose " +  cbElder.value +":$45.35, please enter quantity", "");
 	    	totalPrice += quantity * 45.35;
-	    	txt += cbElder.value +": $45.35\n";
-	    	innerHTMLvalue += cbElder.value + ": $45.35&emsp;&emsp;&emsp;" + quantity + "&emsp;&emsp;&emsp;&emsp;&emsp;  $" + (quantity * 45.35).toFixed(2) +"<br>";
+	    	innerHTMLvalue += "<tr><td></td><td>" + cbElder.value + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$45.35</td><td>&emsp;&emsp;&emsp;" + quantity + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 45.35).toFixed(2) +"</td><td></td></tr>";
 	    }
 	    if (cbArk.checked) {
-	    	quantity = prompt("You have chose " +  cbArk.value +":$56.68, please enter quantity", "");
+	    	quantity = prompt("You have chose " +  cbArk.value +"$56.68, please enter quantity", "");
 	    	totalPrice += quantity * 56.68;
-	    	txt += cbArk.value +": $56.68\n";
-	    	innerHTMLvalue += cbArk.value + "&emsp;&emsp;&emsp;&emsp;: $56.68&emsp;&emsp;&emsp;" + quantity + "&emsp;&emsp;&emsp;&emsp;&emsp;  $" + (quantity * 56.68).toFixed(2) +"<br>";
+	    	innerHTMLvalue += "<tr><td></td><td>" + cbArk.value + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$56.68</td><td>&emsp;&emsp;&emsp;" + quantity + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 56.68).toFixed(2) +"</td><td></td></tr>";
 	    }
 	    if (cbCars.checked) {
 	    	quantity = prompt("You have chose " +  cbCars.value +": $69.34, please enter quantity", "");
-	    	totalPrice += quantity * 69.34; 
-	    	txt += cbCars.value +": $69.34\n";
-	    	innerHTMLvalue += cbCars.value + "&emsp;&emsp;&emsp;&emsp;: $69.34&emsp;&emsp;&emsp;" + quantity + "&emsp;&emsp;&emsp;&emsp;&emsp;  $" + (quantity * 69.34).toFixed(2) +"<br>";
+	    	totalPrice += quantity * 69.34;
+	    	innerHTMLvalue += "<tr><td></td><td>" + cbCars.value + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$69.34</td><td>&emsp;&emsp;&emsp;" + quantity + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 69.34).toFixed(2) +"</td><td></td></tr>";
 	    }
 	    if (cbGod.checked) {
 	    	quantity = prompt("You have chose " +  cbGod.value +":$85.54, please enter quantity", "");
 	    	totalPrice += quantity * 85.54;
-	    	txt += cbGod.value +": $85.54\n";
-	    	innerHTMLvalue += cbGod.value + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: $85.54&emsp;&emsp;&emsp;" + quantity + "&emsp;&emsp;&emsp;&emsp;&emsp;  $" + (quantity * 85.54).toFixed(2) +"<br>";
-	    }
+	    	innerHTMLvalue += "<tr><td></td><td>" + cbGod.value + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$85.54</td><td>&emsp;&emsp;&emsp;" + quantity + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 85.54).toFixed(2) +"</td><td></td></tr>";
+		}
 	    if (cbVR.checked) {
 	    	quantity = prompt("You have chose " +  cbVR.value +":$56.57, please enter quantity", "");
 	    	totalPrice += quantity * 56.57;
-	    	txt += cbVR.value +": $56.57\n";
-	    	innerHTMLvalue += cbVR.value + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: $56.57&emsp;&emsp;&emsp;" + quantity + "&emsp;&emsp;&emsp;&emsp;&emsp;  $" + (quantity * 56.57).toFixed(2) +"<br>";
+	    	innerHTMLvalue += "<tr><td></td><td>" + cbVR.value + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$56.57</td><td>&emsp;&emsp;&emsp;" + quantity + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 56.57).toFixed(2) +"</td><td></td></tr>";
 	    }
 	    if (cbKnack.checked) {
 	    	quantity = prompt("You have chose " +  cbKnack.value +":$37.47, please enter quantity", "");
 	    	totalPrice += quantity * 37.47;
-	    	txt += cbKnack.value +": $37.47\n";
-	    	innerHTMLvalue += cbKnack.value + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: $37.47&emsp;&emsp;&emsp;" + quantity + "&emsp;&emsp;&emsp;&emsp;&emsp;  $" + (quantity * 37.47).toFixed(2) +"<br>";
+	    	innerHTMLvalue += "<tr><td></td><td>" + cbKnack.value + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$37.47</td><td>&emsp;&emsp;&emsp;" + quantity + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 37.47).toFixed(2) +"</td><td></td></tr>";
 	    }
 	    if (cbMatterfall.checked) {
 	    	quantity = prompt("You have chose " +  cbMatterfall.value +":$19.99, please enter quantity", "");
 	    	totalPrice += quantity * 19.99
-	    	txt += cbMatterfall.value +": $19.99\n";
-	    	innerHTMLvalue += cbMatterfall.value + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: $19.99&emsp;&emsp;&emsp;" + quantity + "&emsp;&emsp;&emsp;&emsp;&emsp;  $" + (quantity * 19.99).toFixed(2) +"<br>";
+	    	innerHTMLvalue += "<tr><td></td><td>" + cbMatterfall.value + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$19.99</td><td>&emsp;&emsp;&emsp;" + quantity + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 19.99).toFixed(2) +"</td><td></td></tr>";
 	    }
 	    if (cbFarcry.checked) {
 	    	quantity = prompt("You have chose " +  cbFarcry.value +": $59.99, please enter quantity", "");
 	    	totalPrice += quantity * 59.99;
-	    	txt += cbFarcry.value +": $59.99\n";
-	    	innerHTMLvalue += cbFarcry.value + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: $59.99&emsp;&emsp;&emsp;" + quantity + "&emsp;&emsp;&emsp;&emsp;&emsp;  $" + (quantity * 59.99).toFixed(2) +"<br>";
+	    	innerHTMLvalue += "<tr><td></td><td>" + cbFarcry.value + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$59.99</td><td>&emsp;&emsp;&emsp;" + quantity + "</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + (quantity * 59.99).toFixed(2) +"</td><td></td></tr>";
 	    }
-	    innerHTMLvalue += "<br>Total: $" + totalPrice.toFixed(2);
+		innerHTMLvalue += "<tr><td></td><td></td><td></td><td>&emsp;&emsp;&emsp;Total:</td><td>&emsp;&emsp;&emsp;&emsp;&emsp;$" + totalPrice.toFixed(2) +"</td><td></td></tr></tbody></table>";
 
-    	var contentHTML = "<table height='auto' width='100%' cellpadding='0' cellspacing='0'><tr><td colspan='3' align='center'><br><br><font color='#F4D38F' size='5'>RECEIPT</font><hr width='160' color='95989A'><font color='#95989A' size='3'>Specify the quantity of your chosen games</font></td></tr><tr><td width='30%'></td><td colspan='2'><br><br><font size='3' color='#FFFFF'><pre>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + innerHTMLvalue + "</font></pre></td></tr></table>";
+    	var contentHTML = "<table height='auto' width='100%' cellpadding='0' cellspacing='0'><tr><td colspan='3' align='center'><br><br><font color='#F4D38F' size='5'>RECEIPT</font><hr width='160' color='95989A'><font color='#95989A' size='3'>Thank you for your purchase!<br></font><font color='#F4D38F' size='3'>Customer: "+ txt +"</font></td></tr></table><br><br><font size='3' color='#FFFFF'>" + innerHTMLvalue + "</font>";
     	document.getElementById("products-content").innerHTML = contentHTML;
 	}
 	</script>
